@@ -42,10 +42,12 @@ Após os testes, a Regressão Logística apresentou o melhor desempenho geral, o
 
 ### Resultados
 Modelo	Acurácia	Precisão	Recall	F1-score
+
 Logistic Regression	0.80	0.65	0.52	0.58
+
 Random Forest	0.78	0.62	0.48	0.54
 
-Embora ambos tenham apresentado resultados próximos, a Regressão Logística foi escolhida por combinar melhor desempenho e facilidade para interpretar os fatores associados ao churn.
+**Embora ambos tenham apresentado resultados próximos, a Regressão Logística foi escolhida por combinar melhor desempenho e facilidade para interpretar os fatores associados ao churn.**
 
 # Principais Descobertas
 Clientes em contratos mensais apresentam maior risco
