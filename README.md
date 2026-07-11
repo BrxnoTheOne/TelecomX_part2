@@ -1,76 +1,112 @@
-# 📊 TelecomX — Previsão de Evasão de Clientes (Churn)
+# Predição de Churn para Apoiar Estratégias de Retenção de Clientes
 
-## 📌 Descrição do Projeto
+## Visão Geral
 
-Este projeto tem como objetivo prever a **evasão de clientes (churn)** da empresa fictícia TelecomX utilizando técnicas de **Machine Learning**. A análise busca identificar padrões que indicam maior probabilidade de cancelamento e entender quais fatores influenciam a retenção ou saída dos clientes.
+Empresas de telecomunicações perdem receita quando clientes cancelam seus serviços. No entanto, agir somente após o cancelamento impede qualquer ação preventiva.
 
----
+Neste projeto foi desenvolvido um modelo preditivo capaz de identificar clientes com maior probabilidade de evasão, permitindo que equipes de Marketing, CRM e Customer Success priorizem ações de retenção antes que o cancelamento aconteça.
 
-# 🤖 Modelos de Classificação Utilizados
+Além da construção do modelo, o projeto analisa quais características mais influenciam o comportamento dos clientes, transformando previsões em recomendações para o negócio.
 
-Foram treinados dois modelos de classificação:
+## Problema de Negócio
 
-* **Logistic Regression**
-* **Random Forest**
+A empresa precisava responder duas perguntas:
 
-## Resultados Obtidos
+Quais clientes apresentam maior risco de cancelar o serviço?
+Quais fatores mais influenciam essa decisão?
 
-| Modelo              | Acurácia | Precisão (Churn) | Recall (Churn) | F1-score (Churn) |
-| ------------------- | -------- | ---------------- | -------------- | ---------------- |
-| Logistic Regression | **0.80** | 0.65             | **0.52**       | **0.58**         |
-| Random Forest       | 0.78     | 0.62             | 0.48           | 0.54             |
+Responder essas perguntas permite direcionar campanhas de retenção para os clientes certos, reduzindo custos e aumentando a eficiência das ações comerciais.
 
-A **Regressão Logística apresentou o melhor desempenho geral**, superando o Random Forest em todas as métricas avaliadas.
+## Solução Desenvolvida
 
----
+O projeto contemplou todo o fluxo de construção de um modelo preditivo:
 
-# 📏 Métricas de Avaliação
+- Preparação e tratamento dos dados
+- Engenharia de atributos (Feature Engineering)
+- Codificação de variáveis categóricas
+- Divisão entre conjuntos de treino e teste
+- Treinamento de diferentes algoritmos de classificação
+- Comparação entre modelos
+- Avaliação utilizando métricas adequadas para problemas de churn
+- Interpretação das variáveis mais importantes para o modelo
 
-Os modelos foram avaliados utilizando as seguintes métricas:
+## Modelos Avaliados
 
-* **Acurácia** – proporção total de previsões corretas
-* **Precisão** – proporção de previsões de churn que estavam corretas
-* **Recall** – capacidade do modelo de identificar clientes que realmente cancelaram
-* **F1-score** – média harmônica entre precisão e recall
-* **Matriz de Confusão** – análise dos acertos e erros do modelo
+Foram comparados dois algoritmos de classificação:
 
-Essas métricas permitem avaliar não apenas a precisão geral do modelo, mas também sua capacidade de identificar clientes com risco de cancelamento.
+Modelo	Objetivo
+Logistic Regression	Modelo interpretável para compreender o impacto das variáveis
+Random Forest	Modelo baseado em árvores para capturar relações não lineares
 
----
+Após os testes, a Regressão Logística apresentou o melhor desempenho geral, oferecendo melhor equilíbrio entre capacidade preditiva e interpretabilidade.
 
-# 🔎 Principais Fatores que Aumentam o Churn
+### Resultados
+Modelo	Acurácia	Precisão	Recall	F1-score
+Logistic Regression	0.80	0.65	0.52	0.58
+Random Forest	0.78	0.62	0.48	0.54
 
-A análise de importância das variáveis identificou alguns fatores associados ao aumento da evasão de clientes:
+Embora ambos tenham apresentado resultados próximos, a Regressão Logística foi escolhida por combinar melhor desempenho e facilidade para interpretar os fatores associados ao churn.
 
-* **Internet Fiber Optic**
-* **Pagamento via Electronic Check**
-* **Paperless Billing**
-* **Clientes idosos (SeniorCitizen)**
-* **Clientes com menor tempo de contrato**
+# Principais Descobertas
+Clientes em contratos mensais apresentam maior risco
 
-Esses fatores indicam perfis de clientes com maior probabilidade de cancelar o serviço.
+O tipo de contrato foi uma das variáveis mais relevantes para prever cancelamentos.
 
----
+## Possível ação
 
-# 🟢 Fatores Associados à Retenção de Clientes
+- Incentivar migração para contratos anuais.
+- Criar campanhas específicas para clientes recém-adquiridos.
+- Tempo de relacionamento reduz significativamente o risco
 
-Algumas variáveis demonstraram forte relação com **menor probabilidade de churn**:
+**Clientes com maior tempo de permanência tendem a permanecer ativos.**
 
-* **Contratos de longo prazo (1 ou 2 anos)**
-* **Maior tempo de relacionamento com a empresa (tenure)**
-* **Serviços adicionais como Online Security e Tech Support**
-* **Clientes com dependentes ou parceiros**
+### Possível ação
 
-Essas características indicam maior engajamento e fidelização com o serviço.
+- Intensificar estratégias de retenção durante os primeiros meses do relacionamento.
+- Serviços adicionais aumentam retenção
 
----
+Clientes que utilizam serviços como Online Security e Tech Support apresentaram menor probabilidade de cancelar.
 
-# 📊 Conclusão
+### Possível ação
 
-Os modelos desenvolvidos foram capazes de identificar padrões relevantes associados à evasão de clientes.
+- Desenvolver campanhas de cross-sell para clientes novos.
+- Método de pagamento influencia o comportamento
 
-Entre os modelos testados, a **Logistic Regression apresentou melhor desempenho**, atingindo **80% de acurácia** e demonstrando boa capacidade de identificar clientes com risco de churn.
+**Clientes que utilizam Electronic Check apresentaram maior probabilidade de churn.**
 
-A análise das variáveis mostrou que fatores como **tipo de contrato, tempo de relacionamento com a empresa, método de pagamento e serviços adicionais** têm forte influência na decisão de cancelamento.
+### Possível ação
 
-Esses resultados demonstram como técnicas de **Machine Learning aplicadas a dados de clientes** podem ajudar empresas a compreender melhor o comportamento de seus usuários e identificar clientes com maior risco de evasão.
+Investigar possíveis fricções no processo de pagamento.
+Incentivar métodos com maior retenção.
+
+## Como este projeto pode apoiar uma empresa
+
+*Este tipo de solução pode ser utilizado para:*
+
+- Priorizar clientes com maior risco de cancelamento.
+- Apoiar campanhas de retenção.
+- Direcionar ações de Customer Success.
+- Reduzir perdas de receita.
+- Identificar perfis de clientes com maior risco.
+- Apoiar decisões estratégicas baseadas em dados.
+
+## Tecnologias Utilizadas
+- Python
+- Pandas
+- Scikit-learn
+- Matplotlib
+- Jupyter Notebook
+
+## Competências Demonstradas
+
+**Este projeto demonstra experiência prática em:**
+
+Limpeza e preparação de dados
+Engenharia de atributos
+Modelagem preditiva
+Avaliação de modelos de Machine Learning
+Interpretação de métricas de classificação
+Tradução de resultados técnicos em recomendações de negócio
+Comunicação de insights para tomada de decisão
+
+***Este projeto é a continuação da análise exploratória realizada no projeto TelecomX - Parte 1. Após identificar os fatores associados ao churn, esta etapa utiliza Machine Learning para prever quais clientes apresentam maior probabilidade de cancelar o serviço.***
