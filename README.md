@@ -102,11 +102,17 @@ Incentivar métodos com maior retenção.
 **Este projeto demonstra experiência prática em:**
 
 Limpeza e preparação de dados
+
 Engenharia de atributos
+
 Modelagem preditiva
+
 Avaliação de modelos de Machine Learning
+
 Interpretação de métricas de classificação
+
 Tradução de resultados técnicos em recomendações de negócio
+
 Comunicação de insights para tomada de decisão
 
 ***Este projeto é a continuação da análise exploratória realizada no projeto TelecomX - Parte 1. Após identificar os fatores associados ao churn, esta etapa utiliza Machine Learning para prever quais clientes apresentam maior probabilidade de cancelar o serviço.***
